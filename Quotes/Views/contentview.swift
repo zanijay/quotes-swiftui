@@ -12,22 +12,38 @@ struct contentview: View {
     @ObservedObject var model = AuthorModel()
     
     var body: some View {
-        ScrollView {
+        
+        NavigationView{
             
-            VStack {
-                ForEach(model.authors) { a in
-                    card(author: a)
+            ScrollView {
+                
+                VStack {
+                    ForEach(model.authors) { a in
+                        NavigationLink(
+                            destination: CardDetailView(model: a),
+                            label: {
+                                card(author: a)
+                            })
+                        
+                    }
+                    
+                    
                 }
                 
-                
             }
+            .navigationTitle("Authors")
             
         }
+      
+       
     }
 }
 
 struct contentview_Previews: PreviewProvider {
     static var previews: some View {
-        contentview()
+        Group {
+            contentview()
+          
+        }
     }
 }
