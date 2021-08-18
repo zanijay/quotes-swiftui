@@ -1,8 +1,4 @@
-//
-//  Author.swift
-//  M2L16 Challenge Solution
-//
-//  Created by Christopher Ching on 2021-02-04.
+
 //
 
 import Foundation
